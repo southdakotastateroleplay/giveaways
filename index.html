@@ -39,6 +39,47 @@
             opacity: 0.5;
             pointer-events: none;
         }
+
+        .popup {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .popup .popuptext {
+            visibility: hidden;
+            width: 240px;
+            background-color: #555;
+            color: #fff;
+            text-align: left;
+            border-radius: 6px;
+            padding: 8px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -120px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .popup:hover .popuptext {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .join-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .join-button:hover {
+            background-color: #45a049;
+        }
     </style>
 </head>
 
@@ -48,13 +89,16 @@
 
     <div class="giveaway-section">
         <div class="giveaway-card">
-            <h2>Coming Up Giveaways</h2>
-            <p>This giveaway is disabled, but stay tuned for future giveaways!</p>
-            <button class="disabled" disabled>1200 Robux</button>
+            <h2>Current Giveaways</h2>
+            <p>This giveaway will require you to join the SDSRP Roblox Group.</p>
+            <div class="popup">
+                <button class="join-button" onclick="location.href='/giveaways/11'">Join Giveaway</button>
+                <span class="popuptext">Click to join the giveaway!</span>
+            </div>
         </div>
 
         <div class="giveaway-card">
-            <h2>Current Giveaways</h2>
+            <h2>Upcoming Giveaways</h2>
             <p>There are no giveaways available at the moment. Check back later!</p>
         </div>
     </div>
